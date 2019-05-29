@@ -1,7 +1,7 @@
 # WSO2 Open Banking Docker Images
 ## Instructions on building the base images
-1. copy wso2-obam pack as `wso2-obam-1.3.0.zip` to dockerfiles/wso2-obam/base/1.3.0/files/
-4. copy wso2-obkm pack as `wso2-obkm-1.3.0.zip` to dockerfiles/wso2-obkm/base/1.3.0/files/
+1. extract wso2-obam pack to `dockerfiles/wso2-obam/base/1.3.0/files/wso2-obam-1.3.0`
+4. extract wso2-obkm pack to `dockerfiles/wso2-obkm/base/1.3.0/files/wso2-obkm-1.3.0`
 5. build base docker images ./build-docker-images.sh
 ## Usage examples
 ### Open banking Key Manager
