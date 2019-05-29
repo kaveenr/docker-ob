@@ -46,5 +46,5 @@ services:
     volumes:
       - ./configuration/wso2-obam:/home/wso2carbon/wso2-config-volume
     ports:
-      - "9445:9443"
+      - "9443:9443"
       - "8243:8243"
