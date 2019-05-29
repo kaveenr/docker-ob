@@ -14,5 +14,5 @@ CURRENT_DIR=`pwd`
 
 # Build Based Images
 docker build --no-cache -t wso2-obam:1.3.0-base -f $CURRENT_DIR/wso2-obam/base/1.3.0/Dockerfile $CURRENT_DIR/wso2-obam/base/1.3.0
-#docker build --no-cache -t wso2-obkm:1.3.0-base -f $CURRENT_DIR/wso2-obkm/base/1.3.0/Dockerfile $CURRENT_DIR/wso2-obkm/base/1.3.0
+docker build --no-cache -t wso2-obkm:1.3.0-base -f $CURRENT_DIR/wso2-obkm/base/1.3.0/Dockerfile $CURRENT_DIR/wso2-obkm/base/1.3.0
 
