@@ -87,7 +87,6 @@ fi
 #
 cp ${CARBON_HOME}/repository/resources/finance/scripts/wso2-obam-conf/registry.xml ${CARBON_HOME}/repository/conf
 cp ${CARBON_HOME}/repository/resources/finance/scripts/wso2-obam-conf/user-mgt.xml ${CARBON_HOME}/repository/conf
-cp ${CARBON_HOME}/repository/resources/finance/scripts/wso2-obam-conf/global_FreqPerDay.siddhiql ${CARBON_HOME}/repository/deployment/server/executionplans
 
 # Replace Mysql 5.7 Scripts
 mv ${CARBON_HOME}/dbscripts/mysql5.7.sql ${CARBON_HOME}/dbscripts/mysql.sql
