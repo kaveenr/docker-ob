@@ -82,10 +82,16 @@ if $cygwin; then
   [ -n "$AXIS2_HOME" ] && CARBON_HOME=`cygpath --unix "$CARBON_HOME"`
 fi
 
+#
+# OB Related Configurations
+#
+cp ${CARBON_HOME}/repository/resources/finance/scripts/wso2-obam-conf/registry.xml ${CARBON_HOME}/repository/conf
+cp ${CARBON_HOME}/repository/resources/finance/scripts/wso2-obam-conf/user-mgt.xml ${CARBON_HOME}/repository/conf
+cp ${CARBON_HOME}/repository/resources/finance/scripts/wso2-obam-conf/global_FreqPerDay.siddhiql ${CARBON_HOME}/repository/deployment/server/executionplans
+
 # Replace Mysql 5.7 Scripts
 mv ${CARBON_HOME}/dbscripts/mysql5.7.sql ${CARBON_HOME}/dbscripts/mysql.sql
 mv ${CARBON_HOME}/dbscripts/apimgt/mysql5.7.sql ${CARBON_HOME}/dbscripts/apimgt/mysql.sql
-# End replace
 
 # For OS400
 if $os400; then

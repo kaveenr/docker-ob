@@ -82,6 +82,12 @@ if $cygwin; then
   [ -n "$AXIS2_HOME" ] && CARBON_HOME=`cygpath --unix "$CARBON_HOME"`
 fi
 
+#
+# OB Related Configurations
+#
+cp ${CARBON_HOME}/repository/resources/finance/scripts/wso2-obkm-conf/registry.xml ${CARBON_HOME}/repository/conf
+cp ${CARBON_HOME}/repository/resources/finance/scripts/wso2-obkm-conf/user-mgt.xml ${CARBON_HOME}/repository/conf
+
 # Replace Mysql 5.7 Scripts
 mv ${CARBON_HOME}/dbscripts/mysql5.7.sql ${CARBON_HOME}/dbscripts/mysql.sql
 mv ${CARBON_HOME}/dbscripts/apimgt/mysql5.7.sql ${CARBON_HOME}/dbscripts/apimgt/mysql.sql
@@ -91,7 +97,9 @@ mv ${CARBON_HOME}/dbscripts/identity/uma/mysql5.7.sql ${CARBON_HOME}/dbscripts/i
 mv ${CARBON_HOME}/dbscripts/finance/openbanking.org.uk/mysql-5-7.sql ${CARBON_HOME}/dbscripts/finance/openbanking.org.uk/mysql.sql
 mv ${CARBON_HOME}/dbscripts/finance/berlin-group.org/mysql-5-7.sql ${CARBON_HOME}/dbscripts/finance/berlin-group.org/mysql.sql
 mv ${CARBON_HOME}/dbscripts/finance/STET/mysql-5-7.sql ${CARBON_HOME}/dbscripts/finance/STET/mysql.sql
-# End replace
+
+# Update MYSQL Input limit
+sed -i -e 's|INPUTS VARCHAR(1000)|INPUTS VARCHAR(3000)|g' ${CARBON_HOME}/dbscripts/apimgt/mysql.sql
 
 # For OS400
 if $os400; then
